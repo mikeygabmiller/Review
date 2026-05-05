@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#141414;font-family:'Outfit',sans-serif;color:#fff;overflow-x:hidden}
+
+.rev-section{padding:52px 0 56px;overflow:hidden}
+
+/* ── Header ── */
+.rev-header{max-width:1100px;margin:0 auto 32px;padding:0 24px;text-align:center}
+.rev-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:#dc2626;margin-bottom:12px;
+}
+.rev-tag::before,.rev-tag::after{content:'';width:24px;height:2px;background:#dc2626;display:inline-block}
+.rev-title{font-size:clamp(26px,5vw,40px);font-weight:900;line-height:1.1;margin-bottom:10px}
+.rev-title span{color:#dc2626}
+
+/* Stat strip */
+.stat-strip{
+  display:inline-flex;align-items:center;gap:16px;
+  background:#1a1a1a;border:2px solid #222;border-radius:10px;
+  padding:10px 22px;
+}
+.stat-strip:hover{border-color:#dc2626}
+.ss-rating{font-size:30px;font-weight:900;line-height:1}
+.ss-stars{display:flex;gap:2px}
+.ss-stars svg{width:18px;height:18px}
+.ss-div{width:1px;height:28px;background:#2a2a2a}
+.ss-count{text-align:left}
+.ss-count .n{font-size:18px;font-weight:800;color:#dc2626}
+.ss-count .l{font-size:10px;font-weight:600;color:#666;letter-spacing:1.5px;text-transform:uppercase}
+
+/* ── Marquee ── */
+.marquee-wrap{position:relative;padding:6px 0}
+.marquee-wrap::before,.marquee-wrap::after{
+  content:'';position:absolute;top:0;bottom:0;width:80px;z-index:3;pointer-events:none;
+}
+.marquee-wrap::before{left:0;background:linear-gradient(to right,#141414 0%,transparent 100%)}
+.marquee-wrap::after{right:0;background:linear-gradient(to left,#141414 0%,transparent 100%)}
+
+.marquee-track{
+  display:flex;gap:18px;width:max-content;
+  animation:marquee 40s linear infinite;
+}
+.marquee-track:hover{animation-play-state:paused}
+
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+/* ── Cards ── */
+.m-card{
+  flex-shrink:0;width:320px;
+  background:linear-gradient(160deg,#1c1c1c 0%,#151515 100%);
+  border:2px solid #222;border-radius:14px;
+  padding:24px 22px 22px;
+  position:relative;
+  transition:border-color .3s,box-shadow .3s;
+}
+.m-card:hover{
+  border-color:#dc2626;
+  box-shadow:0 0 24px rgba(220,38,38,.1);
+}
+
+.m-card::before{
+  content:'\201C';position:absolute;top:14px;right:18px;
+  font-size:52px;font-weight:900;line-height:1;color:#dc2626;opacity:.08;
+  pointer-events:none;
+}
+
+.mc-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.mc-avatar{
+  width:40px;height:40px;border-radius:50%;flex-shrink:0;
+  background:#dc2626;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:800;color:#fff;
+}
+.mc-name{font-size:14px;font-weight:700;line-height:1.2}
+.mc-sub{font-size:11px;font-weight:400;color:#555}
+
+.mc-stars{display:flex;gap:2px;margin-bottom:12px}
+.mc-stars svg{width:14px;height:14px}
+
+.mc-text{
+  font-size:13.5px;font-weight:400;line-height:1.65;color:#bbb;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* ── Second row (reverse direction) ── */
+.marquee-track.reverse{
+  animation:marquee-rev 44s linear infinite;
+}
+@keyframes marquee-rev{
+  0%{transform:translateX(-50%)}
+  100%{transform:translateX(0)}
+}
+
+.row-gap{height:18px}
+</style>
+</head>
+<body>
+<div class="rev-section">
+
+  <div class="rev-header">
+    <div class="rev-tag">Trusted By Locals</div>
+    <div class="rev-title">Real Results. <span>Real Reviews.</span></div>
+    <div class="stat-strip">
+      <div class="ss-rating">5.0</div>
+      <div class="ss-stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg>
+      </div>
+      <div class="ss-div"></div>
+      <div class="ss-count">
+        <div class="n">35+</div>
+        <div class="l">Google Reviews</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 1 — scrolls left -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">C</div><div><div class="mc-name">C Wilson</div><div class="mc-sub">Repeat Client</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey has done my car 4 times now and each time was amazing, quick, thorough, and a fabulous result. 10/10 would recommend.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">T</div><div><div class="mc-name">Tara Hull</div><div class="mc-sub">First Detail</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">He was so professional — well spoken, hard working and thorough. My car had never been detailed before. It looks amazing now.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">F</div><div><div class="mc-name">Flon R</div><div class="mc-sub">3-Car Detail</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey's Mobile Detailing is an absolute gem! For around 6 hours, he cleaned three cars, including waxing and polishing. Outstanding value.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">A</div><div><div class="mc-name">Angela</div><div class="mc-sub">Snohomish</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">As someone who is very protective over their car, I was absolutely amazed at how Mike handled such a detailed task. Incredible attention to detail.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">J</div><div><div class="mc-name">Jason Brandvold</div><div class="mc-sub">Truck + Trailer</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey has attention to detail with schedule, workmanship and price! My Silverado and 28 foot travel trailer look great!</div></div>
+      <!-- duplicate for seamless loop -->
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">C</div><div><div class="mc-name">C Wilson</div><div class="mc-sub">Repeat Client</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey has done my car 4 times now and each time was amazing, quick, thorough, and a fabulous result. 10/10 would recommend.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">T</div><div><div class="mc-name">Tara Hull</div><div class="mc-sub">First Detail</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">He was so professional — well spoken, hard working and thorough. My car had never been detailed before. It looks amazing now.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">F</div><div><div class="mc-name">Flon R</div><div class="mc-sub">3-Car Detail</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey's Mobile Detailing is an absolute gem! For around 6 hours, he cleaned three cars, including waxing and polishing. Outstanding value.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">A</div><div><div class="mc-name">Angela</div><div class="mc-sub">Snohomish</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">As someone who is very protective over their car, I was absolutely amazed at how Mike handled such a detailed task. Incredible attention to detail.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">J</div><div><div class="mc-name">Jason Brandvold</div><div class="mc-sub">Truck + Trailer</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey has attention to detail with schedule, workmanship and price! My Silverado and 28 foot travel trailer look great!</div></div>
+    </div>
+  </div>
+
+  <div class="row-gap"></div>
+
+  <!-- ROW 2 — scrolls right (reverse) -->
+  <div class="marquee-wrap">
+    <div class="marquee-track reverse">
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">J</div><div><div class="mc-name">James Bell</div><div class="mc-sub">Full Interior</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">Mikey did an AMAZING JOB detailing my Ford. I ordered a full interior detail, and he cleaned it to perfection!</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">M</div><div><div class="mc-name">Marissa Jones</div><div class="mc-sub">4-Vehicle Client</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">We first hired Mikey to detail our truck before selling it. He did a great job so we had him come back for our other 3 vehicles.</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">K</div><div><div class="mc-name">Kailey Blight</div><div class="mc-sub">Interior + Exterior</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg></div><div class="mc-text">The BEST!! My car hasn't felt this clean since I got it! Highly recommend and will be back!</div></div>
+      <div class="m-card"><div class="mc-top"><div class="mc-avatar">P</div><div><div class="mc-name">Pat Job</div><div class="mc-sub">Repeat Client</div></div></div><div class="mc-stars"><svg viewBox="0 0 20 20"><polygon points="10,1.5 12.4,7.1 18.5,7.6 13.8,11.7 15.3,17.7 10,14.4 4.7,17.7 6.2,11.7 1.5,7.6 7.6,7.1" fill="#facc15"/></svg><svg viewBox="0 0 20 20
